@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Studio Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">📸 Sudharman's PhotoStudio</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">Orders</a>
+                <a href="#" class="nav-link">Customers</a>
+                <a href="#" class="nav-link">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Photo Order Management</h1>
+            <p>Streamline your photo studio workflow with our easy-to-use order management system</p>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="container">
+            <button id="toggleForm" class="btn btn-primary">Add New Order</button>
+
+            <div id="orderFormContainer" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">New Order</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="orderForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">Customer Name</label>
+                                    <input type="text" class="form-input" name="customerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Customer Phone</label>
+                                    <input type="tel" class="form-input" name="customerPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Total Amount</label>
+                                    <input type="number" class="form-input" name="totalAmount" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Amount Paid</label>
+                                    <input type="number" class="form-input" name="amountPaid" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Bill Number</label>
+                                    <input type="text" class="form-input" name="billNumber" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Designer ID</label>
+                                    <input type="text" class="form-input" name="designerID" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Frame Size</label>
+                                    <input type="text" class="form-input" name="frameSize">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Delivery Date</label>
+                                    <input type="date" class="form-input" name="deliveryDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Completion Date</label>
+                                    <input type="date" class="form-input" name="completionDate">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Recent Orders</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Bill No.</th>
+                                    <th>Total (Rs)</th>
+                                    <th>Paid (Rs)</th>
+                                    <th>Due (Rs)</th>
+                                    <th>Designer ID</th>
+                                    <th>Frame Size</th>
+                                    <th>Delivery Date</th>
+                                    <th>Completion Date</th>
+                                    <th>Time Remaining</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderTableBody">
+                                <!-- Orders will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
